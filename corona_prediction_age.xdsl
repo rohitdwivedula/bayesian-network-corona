@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- This network was created in GeNIe Academic, which can be used for educational and research purposes only -->
+<smile version="1.0" id="Network2" numsamples="10000" discsamples="10000">
+	<nodes>
+		<cpt id="Officer">
+			<state id="T" />
+			<state id="F" />
+			<probabilities>0.3 0.7</probabilities>
+		</cpt>
+		<cpt id="view_officer">
+			<state id="T" />
+			<state id="F" />
+			<parents>Officer</parents>
+			<probabilities>0.5 0.5 0 1</probabilities>
+		</cpt>
+		<cpt id="Status_health">
+			<state id="T" />
+			<state id="F" />
+			<parents>Officer</parents>
+			<probabilities>0.7 0.3 0.3 0.7</probabilities>
+		</cpt>
+		<cpt id="Gender">
+			<state id="Male" />
+			<state id="Female" />
+			<probabilities>0.5197071224852267 0.4802928775147733</probabilities>
+		</cpt>
+		<cpt id="Age">
+			<state id="age_0_10" />
+			<state id="age_11_20" />
+			<state id="age_21_30" />
+			<state id="age_31_40" />
+			<state id="age_41_50" />
+			<state id="age_51_60" />
+			<state id="age_61_70" />
+			<state id="age_71_80" />
+			<state id="age_81_90" />
+			<state id="age_91_100" />
+			<probabilities>0.04180887372013652 0.09726962457337884 0.2192832764505119 0.2290955631399317 0.1633959044368601 0.1305460750853242 0.08703071672354949 0.02602389078498293 0.004266211604095563 0.001279863481228771</probabilities>
+		</cpt>
+		<cpt id="Infected">
+			<state id="T" />
+			<state id="F" />
+			<parents>Gender Age</parents>
+			<probabilities>0.041808873720137 0.958191126279863 0.097269624573379 0.9027303754266209 0.219283276450512 0.7807167235494881 0.229095563139932 0.7709044368600679 0.16339590443686 0.83660409556314 0.130546075085324 0.869453924914676 0.08703071672355001 0.91296928327645 0.026023890784983 0.973976109215017 0.004266211604096 0.995733788395904 0.001279863481229 0.998720136518771 0.020904436860068 0.9790955631399318 0.04863481228669 0.95136518771331 0.109641638225256 0.890358361774744 0.114547781569966 0.885452218430034 0.08169795221843 0.91830204778157 0.065273037542662 0.934726962457338 0.043515358361775 0.956484641638225 0.013011945392492 0.986988054607508 0.002133105802048 0.997866894197952 0.000639931740614 0.9993600682593859</probabilities>
+		</cpt>
+		<cpt id="Quarantine_Person">
+			<state id="T" />
+			<state id="F" />
+			<parents>Infected Officer</parents>
+			<probabilities>0.6 0.4 0 1 0 1 0 1</probabilities>
+		</cpt>
+		<cpt id="fly_in_person">
+			<state id="T" />
+			<state id="F" />
+			<parents>Quarantine_Person Infected Status_health</parents>
+			<probabilities>0 1 0 1 0 1 0 1 0.6 0.4 0.6 0.4 0.2 0.8 0.5 0.5</probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 2.5.5224.0 ACADEMIC" name="Network2">
+			<node id="Officer">
+				<name>Officer</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>324 36 407 66</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="view_officer">
+				<name>View Officer</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>85 143 202 173</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Status_health">
+				<name>Status Health</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>237 145 362 180</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Quarantine_Person">
+				<name>Quarantine Person</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>381 152 544 182</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Infected">
+				<name>Infected</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>611 146 726 179</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="fly_in_person">
+				<name>Fly In Person</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>199 312 371 342</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Age">
+				<name>Age</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>872 100 912 125</position>
+				<barchart active="true" width="128" height="198" />
+			</node>
+			<node id="Gender">
+				<name>Gender</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>847 260 959 341</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+		</genie>
+	</extensions>
+</smile>

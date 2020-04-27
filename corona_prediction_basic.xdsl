@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- This network was created in GeNIe Academic, which can be used for educational and research purposes only -->
+<smile version="1.0" id="Network2" numsamples="10000" discsamples="10000">
+	<nodes>
+		<cpt id="Officer">
+			<state id="T" />
+			<state id="F" />
+			<probabilities>0.3 0.7</probabilities>
+		</cpt>
+		<cpt id="view_officer">
+			<state id="T" />
+			<state id="F" />
+			<parents>Officer</parents>
+			<probabilities>0.5 0.5 0 1</probabilities>
+		</cpt>
+		<cpt id="Status_health">
+			<state id="T" />
+			<state id="F" />
+			<parents>Officer</parents>
+			<probabilities>0.7 0.3 0.3 0.7</probabilities>
+		</cpt>
+		<cpt id="Infected">
+			<state id="T" />
+			<state id="F" />
+			<probabilities>0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="Quarantine_Person">
+			<state id="T" />
+			<state id="F" />
+			<parents>Infected Officer</parents>
+			<probabilities>0.6 0.4 0 1 0 1 0 1</probabilities>
+		</cpt>
+		<cpt id="fly_in_person">
+			<state id="T" />
+			<state id="F" />
+			<parents>Quarantine_Person Infected Status_health</parents>
+			<probabilities>0 1 0 1 0 1 0 1 0.6 0.4 0.6 0.4 0.2 0.8 0.5 0.5</probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 2.5.5224.0 ACADEMIC" name="Network2">
+			<node id="Officer">
+				<name>Officer</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>324 36 407 66</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="view_officer">
+				<name>View Officer</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>85 143 202 173</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Status_health">
+				<name>Status Health</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>237 145 362 180</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Quarantine_Person">
+				<name>Quarantine Person</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>381 152 544 182</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Infected">
+				<name>Infected</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>625 149 740 182</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="fly_in_person">
+				<name>Fly In Person</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>199 312 371 342</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+		</genie>
+	</extensions>
+</smile>
